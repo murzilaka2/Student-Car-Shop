@@ -1,0 +1,13 @@
+﻿@model Car
+
+<div class="col-lg-4">
+                    <img src="@Model.Image" class="img-thumbnail" />
+                    <h3>Модель: @Model.Name</h3>
+                    <p>Категория: @Model.Category</p>
+                    <p>Цена: @Model.Price.ToString()</p>
+                    <p>Количество: @Model.Available</p>
+                    @*используя TagHelper, указываем какой контроллер и метод будет вызываться при нажатии на кнопку
+                      asp-route-Id - указываем название параметра (Id), который передаем в метод
+                    *@
+                    <p><a class="btn alert-warning" asp-controller="ShopCart" asp-action="AddToCart" asp-route-Id="@Model.Id">Добавить в корзину</a></p>
+                </div>

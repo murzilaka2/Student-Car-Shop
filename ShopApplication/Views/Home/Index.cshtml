@@ -1,0 +1,14 @@
+﻿@model HomeViewModel
+<br />
+<h2>Лучшие автомобили:</h2>
+<div class="row mt-5 mb-2">
+    @{
+        @*Выводим только избранные автомобили*@
+        @*Перебираем данные в подключенной модели*@
+        @*Обязательно указываем явны тип данных в цикле*@
+        foreach (Car car in Model.FavoriteCars)
+        {
+            @Html.Partial("_Cars", car)
+        }
+    }
+</div>

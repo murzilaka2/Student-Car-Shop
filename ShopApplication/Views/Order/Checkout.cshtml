@@ -1,0 +1,74 @@
+﻿@model Order
+
+<div class="row">
+    <h3>Оформление заказа</h3>
+    @*TagHelper - добавляем дополнительные теги внутри HTML
+        Для их использования, их необходимо подключить,
+        подключение происходит в файле - _ViewImports.cshtml
+
+        В самом form указали метод Checkout из контролера Order
+        Именно этот мтеод будет вызываться после нажатия кнопки подтверждения
+
+    *@
+    <form asp-action="Checkout" method="post" class="form-horizontal">
+        <div class="form-group">
+            @*Вывод надписи: Введите имя. asp-for, указывает с каким полем мы работаем
+                из модели Order
+            *@
+            <label asp-for="Name"></label>
+            <div class="col-md-5">
+                @*Указываем что ввод будет передаваться в свойство Name*@
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            @*Вывод надписи: Введите имя. asp-for, указывает с каким полем мы работаем
+                из модели Order
+            *@
+            <label asp-for="SurName"></label>
+            <div class="col-md-5">
+                @*Указываем что ввод будет передаваться в свойство SurName*@
+                <input asp-for="SurName" class="form-control" />
+                <span asp-validation-for="SurName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            @*Вывод надписи: Введите имя. asp-for, указывает с каким полем мы работаем
+                из модели Order
+            *@
+            <label asp-for="Address"></label>
+            <div class="col-md-5">
+                @*Указываем что ввод будет передаваться в свойство Address*@
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            @*Вывод надписи: Введите имя. asp-for, указывает с каким полем мы работаем
+                из модели Order
+            *@
+            <label asp-for="Phone"></label>
+            <div class="col-md-5">
+                @*Указываем что ввод будет передаваться в свойство Phone*@
+                <input asp-for="Phone" class="form-control"/>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            @*Вывод надписи: Введите имя. asp-for, указывает с каким полем мы работаем
+                из модели Order
+            *@
+            <label asp-for="Email"></label>
+            <div class="col-md-5">
+                @*Указываем что ввод будет передаваться в свойство Email*@
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        @*При нажатии на кнопку с типом Submit, срабатывает Action формы
+            и вызывается метод Checkout
+        *@
+        <input class="btn btn-success" type="submit" value="Завершить заказ" />
+    </form>
+</div>

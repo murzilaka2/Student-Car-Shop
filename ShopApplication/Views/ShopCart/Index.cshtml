@@ -1,0 +1,14 @@
+﻿@model ShopCartViewModel
+@*Вывод всех элементов из корзины пользователя*@
+<div class="container">
+    @foreach(var item in Model.ShopCart.ShopCarItems)
+    {
+        <div class="alert alert-warning mt-3">
+            <b>Автомобиль: </b>@item.Car.Name<br/>
+            <b>Цена: </b>@item.Car.Price
+        </div>
+    }
+    <hr/>
+    @*asp-controller="Order" - при нажатии на кнопку, будет вызываться контрллер Order, для оплаты заказа*@
+    <a class="btn btn-danger" asp-controller="Order" asp-action="Checkout">Оплатить</a>
+</div>
